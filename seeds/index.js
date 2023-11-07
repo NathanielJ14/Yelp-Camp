@@ -5,6 +5,7 @@ const cities = require('./cities');
 
 mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
 
+// Establishing a connection to the Database
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -14,7 +15,7 @@ db.once("open", () => {
 
 const sample = array => array[Math.floor(Math.random() * array.length)];
 
-
+// Adds randomly created instances inside of the database
 const seedDB = async () => {
     await Campground.deleteMany({});
     for (let i = 0; i < 50; i++) {
