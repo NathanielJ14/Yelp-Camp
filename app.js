@@ -21,7 +21,6 @@ db.once("open", () => {
 const app = express();
 
 app.engine('ejs', ejsMate);
-app.se
 app.set('view engine', 'ejs');('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
