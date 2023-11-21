@@ -17,6 +17,7 @@ const validateCampground = (req, res, next) => {
     }
 }
 
+//All campground routes
 
 router.get('/', catchAsync(async (req, res) => {
     const campgrounds = await Campground.find({});
