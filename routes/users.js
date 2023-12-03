@@ -4,6 +4,7 @@ const passport = require('passport');
 const catchAsync = require('../utils/catchAsync');
 const User = require('../models/user');
 
+//Routes for registration
 router.get('/register', (req, res) => {
     res.render('users/register');
 })
@@ -21,6 +22,7 @@ router.post('/register', catchAsync(async (req, res) => {
     }
 }))
 
+//Routes for login
 router.get('/login', (req, res) => {
     res.render('users/login');
 })
