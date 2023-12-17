@@ -18,7 +18,7 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 // Adds randomly created instances inside of the database
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 300; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
         const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
@@ -28,7 +28,7 @@ const seedDB = async () => {
             description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique iure, laborum laboriosam optio voluptates totam commodi rem officia possimus qui, deserunt neque, natus architecto unde ducimus sit impedit tempora eligendi.",
             price,
             geometry: {
-                type: "Point", 
+                type: "Point",
                 coordinates: [
                     cities[random1000].longitude,
                     cities[random1000].latitude,
