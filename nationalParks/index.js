@@ -1,3 +1,13 @@
+const dotenv = require('dotenv');
+const path = require('path');
+
+// Load environment variables from .env file
+const envResult = dotenv.config({ path: "../.env" });
+
+if (envResult.error) {
+    throw envResult.error;
+}
+
 const mongoose = require('mongoose');
 const axios = require('axios');
 const Campground = require('../models/campground');
@@ -5,7 +15,8 @@ const Campground = require('../models/campground');
 const apiKey = 'kkcP0vNRZQ8z3EYFiAFtjdEfyGlfImRnRTq3sipR';
 const apiUrl = 'https://developer.nps.gov/api/v1/campgrounds';
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+const dbUrl = process.env.DB_URL;
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 
@@ -13,6 +24,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log('Database connected');
 });
+
 
 // Function to make API call and retrieve campground details
 const fetchCampgroundsDetails = async () => {
@@ -48,7 +60,7 @@ const fetchRandomUnsplashPhoto = async () => {
 
         const response = await fetch('https://api.unsplash.com/photos/random?query=campground&count=1&orientation=landscape', {
             headers: {
-                'Authorization': 'Client-ID MlAgTjmC2czpAXL-6ZfCzkCh_-q8MmNHBgFzXcxfdZE',
+                'Authorization': `Client-ID ${process.env.UNSPLASH_KEY}`,
             },
         });
 
@@ -120,7 +132,7 @@ const seedDB = async () => {
             // Check if the location has more than 2 characters
             if (location.length > 2) {
                 const camp = new Campground({
-                    author: '656cb33d60b05dbc745bc244',
+                    author: '65845b5b1810fcaadf9d3f9e',
                     location: location,
                     title: name,
                     description: description,
