@@ -4,6 +4,9 @@
 Yelp camp is a project created by Colt Steel on his Web Developer Bootcamp on Udemy. However, I took the time to enhance and update it to my liking. The project allows users to create an account to log in, create, read, update, and delete their own campgrounds and reviews, and view others' additions.
 The project utilizes a Mapbox API to show the locations of the campgrounds. I implemented the National Park Service API and Unsplash API to add various campgrounds with their information and a random nature image.
 
+### Deployment
+https://yelp-camp-c75c.onrender.com/
+
 ### 🧰 Langauges and Tools
 
 <img align="left" style="padding-right:10px" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
@@ -17,6 +20,5 @@ The project utilizes a Mapbox API to show the locations of the campgrounds. I im
 <img align="left" style="padding-right:10px" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
 <img align="left" style="padding-right:10px" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 
-### Deployment
-https://yelp-camp-c75c.onrender.com/
+
           
